@@ -1,12 +1,21 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image, TextInput, Button } from 'react-native';
+import { Link, Stack } from 'expo-router';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
+// import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 
 export default function TabOneScreen() {
   return (
     <View style={ styles.container }>
-      <Text> hello </Text>
+      <View style={ styles.viewUsuario}>
+        <Text>
+          Digite sua Senha: <TextInput placeholder='Digite seu Usuário' />
+        </Text>
+        <Text>
+          Digite sua Senha: <TextInput placeholder='Digite sua Senha' />
+        </Text>
+      </View>
+      <Link href="/(tabs)/login" style={ styles.button }> Não tem conta? Cadastre-se! </Link>
     </View>
   );
 }
@@ -14,6 +23,14 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  viewUsuario: {
+    justifyContent: 'center',
+  },
+  button: {
+    fontSize: 20,
+    textDecorationLine: 'underline',
+    color: 'blue',
   },
 });
 

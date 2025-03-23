@@ -1,0 +1,16 @@
+# Se deseja saber sobre a funcionalidade de cada página aqui está a documentação delas
+
+## Vou descrever sobre as seguintes telas e suas funcionalidades:
+OBS:("Vale lembrar que os arquivos estão dentro da pasta APP-> (tabs)")
+
+- _layout.tsx
+- contato.tsx
+- index.tsx
+- login.tsx
+- vacinacao.tsx
+- two.tsx
+
+### Pagina _layout.tsx:
+
+Na página _layout.tsx encontramos as configurações globais do app como importações, barra de navegação e assim por diante...
+

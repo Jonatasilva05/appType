@@ -34,14 +34,14 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Petto',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <FontAwesome name="home" size={ 24 } color="black" />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
                     name="info-circle"
-                    size={25}
+                    size={ 25 }
                     color={Colors[colorScheme ?? 'light'].text}
                     style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
                   />
@@ -56,7 +56,7 @@ export default function TabLayout() {
         name='vacinacao'
         options={{
           title: 'vacinação',
-          tabBarIcon: () => <MaterialCommunityIcons name="needle" size={24} color="black" />,
+          tabBarIcon: () => <MaterialCommunityIcons name="needle" size={24} color="purple" />,
         }}
       />
 
@@ -72,15 +72,7 @@ export default function TabLayout() {
         name="login"
         options={{
           title: 'Login',
-          tabBarIcon: ()  => <Entypo name="login" size={24} color="black" />
-        }}
-      />
-
-      <Tabs.Screen
-        name="two"
-        options={{
-          title: 'two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ()  => <Entypo name="login" size={24} color="green" />
         }}
       />
     </Tabs>
