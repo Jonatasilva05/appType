@@ -1,21 +1,46 @@
-import { StyleSheet, Image, TextInput, Button } from 'react-native';
-import { Link, Stack } from 'expo-router';
+import { StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View } from '@/components/Themed';
+import { Link } from 'expo-router';
 
 // import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import { useState } from 'react';
+
+// Icones
+import { Ionicons } from '@expo/vector-icons';
 
 export default function TabOneScreen() {
+  const [verSenha, setVerSenha] = useState(false);
+  const exibirSenhaDigitada = () => {
+    setVerSenha(!verSenha);
+  }
+
   return (
     <View style={ styles.container }>
-      <View style={ styles.viewUsuario}>
-        <Text>
-          Digite sua Senha: <TextInput placeholder='Digite seu Usuário' />
-        </Text>
-        <Text>
-          Digite sua Senha: <TextInput placeholder='Digite sua Senha' />
-        </Text>
+      {/* PRIMEIRO INPUT DA TELA DE LOGIN */}
+      <View>
+        <Text style={ styles.viewText }>Usuário: </Text>
+        <Text style={ styles.quebraLinha }></Text>
+        <TextInput style={ styles.textInput } placeholder='Digite seu Usuário' placeholderTextColor="#D3D3D3" />
       </View>
-      <Link href="/(tabs)/login" style={ styles.button }> Não tem conta? Cadastre-se! </Link>
+
+        {/* QUEBRA DE LINHA ENTRE O PRIMEIRO E SEGUNDO INPUT DA TELA DE LOGIN */}
+        <Text style={ styles.quebraLinha }></Text>
+
+      {/* SEGUNDO INPUT DA TELA DE LOGIN */}
+      <View>
+        <Text style={ styles.viewText }>Senha: </Text>
+        <Text style={ styles.quebraLinha }></Text>
+        <TextInput style={ styles.textInput } placeholder='Digite sua Senha' placeholderTextColor="#D3D3D3" secureTextEntry={!verSenha} />
+        <TouchableOpacity onPress={exibirSenhaDigitada} style={ styles.iconCont }>
+          <Ionicons name={ verSenha ? 'eye-off' : 'eye' } size={24} color="black"></Ionicons>
+        </TouchableOpacity>
+      </View>
+
+      <View>
+        <TouchableOpacity>
+
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -23,14 +48,26 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  viewUsuario: {
+    alignItems: 'center',
     justifyContent: 'center',
   },
-  button: {
+  viewText: {
     fontSize: 20,
-    textDecorationLine: 'underline',
-    color: 'blue',
+  },
+  textInput: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    borderColor: 'black',
+    borderWidth: 2,
+  },
+  quebraLinha: {
+    backgroundColor: 'transparent',
+    height: 50,
+  },
+  iconCont: {
+    position: 'absolute',
+    right: -30,
+    top: 86,
   },
 });
 
