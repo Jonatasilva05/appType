@@ -16,11 +16,12 @@ export default function TabOneScreen() {
 
   return (
     <View style={ styles.container }>
+
       {/* PRIMEIRO INPUT DA TELA DE LOGIN */}
       <View>
         <Text style={ styles.viewText }>Usuário: </Text>
         <Text style={ styles.quebraLinha }></Text>
-        <TextInput style={ styles.textInput } placeholder='Digite seu Usuário' placeholderTextColor="#D3D3D3" />
+        <TextInput style={ styles.textInput } placeholder='Digite seu Usuário...' placeholderTextColor="#D3D3D3" />
       </View>
 
         {/* QUEBRA DE LINHA ENTRE O PRIMEIRO E SEGUNDO INPUT DA TELA DE LOGIN */}
@@ -30,15 +31,15 @@ export default function TabOneScreen() {
       <View>
         <Text style={ styles.viewText }>Senha: </Text>
         <Text style={ styles.quebraLinha }></Text>
-        <TextInput style={ styles.textInput } placeholder='Digite sua Senha' placeholderTextColor="#D3D3D3" secureTextEntry={!verSenha} />
+        <TextInput style={ styles.textInput } placeholder='Digite sua Senha....' placeholderTextColor="#D3D3D3" secureTextEntry={!verSenha} />
         <TouchableOpacity onPress={exibirSenhaDigitada} style={ styles.iconCont }>
           <Ionicons name={ verSenha ? 'eye-off' : 'eye' } size={24} color="black"></Ionicons>
         </TouchableOpacity>
       </View>
 
       <View>
-        <TouchableOpacity>
-
+        <TouchableOpacity style={ styles.button }>
+          <Text>Entrar</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -59,6 +60,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: 'black',
     borderWidth: 2,
+    width: 150,
   },
   quebraLinha: {
     backgroundColor: 'transparent',
@@ -69,6 +71,14 @@ const styles = StyleSheet.create({
     right: -30,
     top: 86,
   },
+  button: {
+    backgroundColor: 'green',
+    paddingVertical: 15,
+    paddingHorizontal: 60,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 });
 
   // VIEW PRIMORDIAL(assim que baixa o arquivo)
