@@ -19,7 +19,7 @@ export default function TabOneScreen() {
 
   const login = async () => {
     try {
-      if(usuario === 'jhon' && senha === '123') {
+      if(usuario === 'jhon' && senha === '123456') {
         alert('Bem-vindo(a) ao Petto ' + usuario);
         router.replace('/(tabs)')
       } else {
