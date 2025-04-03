@@ -6,7 +6,7 @@ import { Text, View } from '@/components/Themed';
 export default function TabFourScreen() {
   return (
     <View style={ styles.container }>
-      <Text> contato funcional </Text>
+      <Text> Pagina Inicial </Text>
     </View>
   );
 }
